@@ -1,0 +1,26 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EDIT Username</title>
+    </head>
+    <body>
+        <h2>You are about to edit this user <p style="color: rgb(250, 135, 3); display: inline;;"><%=user.email %></p></h2>
+        <form method="post" action="/user/<%=user.id %>?_method=PATCH">
+            <br>
+        
+            <label> Username: </label>
+            <textarea name="username" ><%= user.username %></textarea>
+            <br>
+            <br>
+            <br>
+            <label>Password</label>
+            <input type="password" placeholder="Enter password" name="password">
+            <br><br>
+            <button>Edit</button>
+        </form>
+
+
+    </body>
+    </html>

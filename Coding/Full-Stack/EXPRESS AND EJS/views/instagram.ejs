@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>This page belongs to @<%= data.name %></h1>
+    <button id="a1">Follow</button>
+    <button>Message</button>
+    <br>
+    <br>    
+    <p style="display: inline;">Followers: <%= data.followers %></p> &nbsp;
+    <p style="display: inline;">Followings: <%= data.following %></p>
+    <br>
+    <br>
+    <hr>
+    <% for (let i=0;i<data.posts.length;i++) {%>
+    <img src= <%= data.posts[i].image %>>
+    <Br>
+        <p style="display: inline;">Likes: <%= data.posts[i].likes %></p> &nbsp;
+        <p style="display: inline;">Comments: <%= data.posts[i].comments %></p> &nbsp;
+        <br>
+        <br>
+    
+    <% } %>
+    
+    <%- include("includes/footer.ejs") %>
+    <script src="/hello.js"></script>
+</body>
+</html>

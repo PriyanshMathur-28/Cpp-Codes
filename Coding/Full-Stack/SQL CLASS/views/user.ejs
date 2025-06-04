@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database</title>
+    <style>
+        table, td, th {
+            border: 1px solid #ccc; /* Light gray border */
+        }
+        table {
+            border-collapse: collapse; /* Ensures borders don’t double up */
+        }
+        th, td {
+            padding: 8px; /* Adds padding for better readability */
+            text-align: left; /* Aligns text to the left */
+        }
+    </style>
+</head>
+<body>
+    <h2>Following is the user data</h2>
+    <div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>USERNAME</th>
+                <th>EMAIL</th>
+                <!-- <th>Edi</th> -->
+            </tr>
+            <% for (let user of result) { %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.email %></td>
+                    <td>
+                        <form method="get" action="/user/<%=user.id %>/edit">
+                            <button>Edit Username</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="get" action="/user/<%=user.id %>/delete">
+                            <button>Delete Username</button>
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+        <br>
+        <br>
+        <button><a href="/user/new" style="text-decoration: none; color: black; font-size: medium;">Click to Add new User</a></button>
+    </div>
+</body>
+</html>

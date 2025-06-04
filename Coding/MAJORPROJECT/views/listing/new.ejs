@@ -1,0 +1,97 @@
+<% layout("/layout/boilerplate") %>
+
+<body>
+    <br>
+    <div class="row">
+        <div class="col-8 offset-2" >
+             <H3>Create a New Listing</H3>
+    <form action="/listing" method="post" class="needs-validation" novalidate >
+        <div class="mb-3">
+        <label for="title" class="form-label" ></label>
+        <input name="listing[title]" value="Add Catchy Title" type="text" class="form-control"   required>
+        <div class="valid-feedback">
+         Title Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Invalid Title</div>
+    
+    </div>
+    
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input name="listing[description]" class="form-control" type="text"  required>
+            <div class="valid-feedback">
+              Description Looks good!
+             </div>
+             <div class="invalid-feedback">
+               Invalid Description</div>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Image Url</label>
+        <input name="listing[image]" value="Enter image link" type="text" class="form-control" required>
+        <div class="valid-feedback">
+          Image Looks good!
+         </div>
+         <div class="invalid-feedback">
+           Invalid Image</div>
+    </div>
+
+    <div class="row">
+        <div class="mb-3 col-md-4 ">
+            <label for="price" class="form-label">Price</label>
+            <input name="listing[price]" value="1200"type="number" class="form-control" required>
+            <div class="valid-feedback">
+              Price Looks good!
+             </div>
+             <div class="invalid-feedback">
+               Invalid Price</div>
+        </div> 
+        <div class="mb-3 col-md-8"> 
+            <label for="country" class="form-label">Country</label>
+            <input name="listing[country]" value="India" type="text" class="form-control" required>
+            <div class="valid-feedback">
+              Country Looks good!
+             </div>
+             <div class="invalid-feedback">
+               Invalid Country</div>
+        </div>     
+
+    </div>
+
+    <div class="mb-3">    
+        <label for="location" class="form-label">Location</label>
+        <input name="listing[location]" value="Jaipur,Rajasthan" type="text" class="form-control" required>
+        <div class="valid-feedback">
+          Looks good!
+         </div>
+         <div class="invalid-feedback">
+           Invalid! </div>
+    </div>
+        <button type="submit" class="btn btn-dark add-btn">Add</button>
+        <br><Br><br>
+    </form>
+
+</div>
+</div>
+ <script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+ </script>
+</body>

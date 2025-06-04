@@ -1,0 +1,15 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Priyansh Mathur",
+  "license": "ISC",
+  "dependencies": {
+    "express": "file:",
+    "nodeman": "^1.1.2"
+  }
+}
